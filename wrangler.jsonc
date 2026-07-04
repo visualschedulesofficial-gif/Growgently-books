@@ -1,0 +1,29 @@
+{
+  // Grow Gently Books - books.growgently.in
+  "name": "growgently-books",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-01",
+
+  // Custom domain (works once the growgently.in zone is on Cloudflare)
+  "routes": [
+    { "pattern": "books.growgently.in", "custom_domain": true }
+  ],
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "growgently-books",
+      // After running the "Setup infrastructure" GitHub Action once,
+      // copy the database_id it prints into the line below, commit, push.
+      "database_id": "PASTE_DATABASE_ID_HERE"
+    }
+  ],
+
+  "r2_buckets": [
+    { "binding": "FILES", "bucket_name": "growgently-books-files" }
+  ],
+
+  "vars": {
+    "SITE_NAME": "Grow Gently Books"
+  }
+}
